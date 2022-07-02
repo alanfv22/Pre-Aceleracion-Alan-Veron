@@ -2,10 +2,11 @@ package com.alkemy.disney.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "pelicula")
@@ -14,14 +15,39 @@ import java.util.List;
 public class PeliculaEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer peliculaID;
+    @Column (name = "pelicula_id")
+    private Integer peliculaId;
 
     private String titulo;
-    private Date FechaCreacion;
+
+    @Column (name = "fecha_creacion")
+    @DateTimeFormat(pattern =  "yyyy/mm/dd")
+    private LocalDate fechaCreacion;
+
     private String imagen;
     private int calificacion;
 
-    @ManyToMany
-    private List<PersonajeEntity> personajes;
+    @ManyToMany(mappedBy = "peliculas",
+                fetch = FetchType.EAGER, // Devuelve una pelicula con sus personajes correspondientes
+                cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+                    }
+                 )
+    private Set<PersonajeEntity> personajes;
+
+    @ManyToOne (fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn (name = "genero_id", insertable = false, updatable = false) // Solo para buscar informacion
+    private GeneroEntity genero; // Para buscar informacion
+
+    @Column(name = "genero_id", nullable = false) // Para guardar y actualizar
+    private Long generoId;
+
+
+
+
+
+
+
 
 }

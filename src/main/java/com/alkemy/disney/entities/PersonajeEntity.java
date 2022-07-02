@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "personaje")
@@ -13,7 +14,8 @@ import java.util.List;
 public class PersonajeEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer personajeID;
+    @Column (name = "personaje_id")
+    private Integer personajeId;
 
     private String nombre;
     private int edad;
@@ -21,15 +23,15 @@ public class PersonajeEntity {
     private String historia;
     private String imagen;
 
-    @ManyToMany
-    private List<PeliculaEntity> peliculas;
+    @ManyToMany (fetch = FetchType.EAGER)  // Devuelve un personaje con sus peliculas correspondientes
+    // duda sobre el cascade respecto a "Al momento del Update, solo actualizar la Entidad Personaje y no su listado de películas")
+    @JoinTable(
+            name = "personajes_peliculas",
+            joinColumns = @JoinColumn(name = "personaje_Id", updatable = false), // updatable -> solo actualiza la Entidad Personaje y no su listado de películas?
+            inverseJoinColumns = @JoinColumn(name = "pelicula_Id"))
+    private Set<PeliculaEntity> peliculas;
 
-    /*@JoinTable(
-    con este codigo se puede setear el nombre de la tabla
 
-            name = "personaje-peliculas",
-            joinColumns = @JoinColumn(name = "personajeID"),
-            inverseJoinColumns = @JoinColumn(name = "peliculaID"))*/
 
 
 

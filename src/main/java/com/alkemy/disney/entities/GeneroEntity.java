@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -14,11 +15,13 @@ import java.util.List;
 public class GeneroEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+    @Column (name = "genero_id")
+    private Integer generoId;
 
     private String nombre;
     private String imagen;
 
-    @OneToMany
-    private List<PeliculaEntity> peliculas;
+    @OneToMany (mappedBy = "genero", fetch = FetchType.EAGER )
+    private Set<PeliculaEntity> peliculas;
+
 }
