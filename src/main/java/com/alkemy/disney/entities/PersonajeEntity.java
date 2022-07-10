@@ -22,10 +22,10 @@ public class PersonajeEntity {
     private String historia;
     private String imagen;
 
-    @ManyToMany (fetch = FetchType.LAZY)// duda sobre el cascade respecto a "Al momento del Update, solo actualizar la Entidad Personaje y no su listado de películas")
+    @ManyToMany (fetch = FetchType.LAZY,  cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "personajes_peliculas",
-            joinColumns = @JoinColumn(name = "personaje_Id", updatable = false), // ¿updatable ≥ solo actualiza la Entidad Personaje y no su listado de películas?
+            joinColumns = @JoinColumn(name = "personaje_Id"),
             inverseJoinColumns = @JoinColumn(name = "pelicula_Id"))
     private Set<PeliculaEntity> peliculas;
 
@@ -40,6 +40,7 @@ public class PersonajeEntity {
         this.peliculas.remove(p);
         p.getPersonajes().remove(this);
     }
+
 
 
 
