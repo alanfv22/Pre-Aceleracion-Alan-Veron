@@ -2,15 +2,12 @@ package com.alkemy.disney.repository;
 
 
 import com.alkemy.disney.entities.PersonajeEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
+@Repository
+public interface PersonajeRepository extends JpaRepository<PersonajeEntity, Long> {
 
-public interface PersonajeRepository extends CrudRepository<PersonajeEntity, Integer> {
-
-    //List<PersonajeEntity> findByPersonajeReference(String personaje);
-
-    List <PersonajeEntity> findById(int id);
 
 
 }

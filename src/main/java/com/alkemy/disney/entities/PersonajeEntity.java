@@ -2,31 +2,32 @@ package com.alkemy.disney.entities;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "personajes")
+@SQLDelete(sql = "UPDATE personajes SET  deleted= true WHERE personaje_id=?")
+@Where(clause = "deleted=false")
 @Getter
 @Setter
 public class PersonajeEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column (name = "personaje_id")
-    private Integer personajeId;
+    private Long personajeId;
 
     private String nombre;
     private int edad;
     private float peso;
     private String historia;
     private String imagen;
+    private boolean deleted=  Boolean.FALSE;
 
-    @ManyToMany (fetch = FetchType.LAZY,  cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinTable(
-            name = "personajes_peliculas",
-            joinColumns = @JoinColumn(name = "personaje_Id"),
-            inverseJoinColumns = @JoinColumn(name = "pelicula_Id"))
+    @ManyToMany(mappedBy = "personajes", fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Set<PeliculaEntity> peliculas;
 
     // métodos de utilidad para el borrado y agregado de peliculas

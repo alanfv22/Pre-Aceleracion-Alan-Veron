@@ -14,14 +14,15 @@ import java.util.Set;
 @Setter
 public class GeneroEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column (name = "genero_id")
     private Integer generoId;
 
     private String nombre;
     private String imagen;
 
-    @OneToMany (mappedBy = "genero", fetch = FetchType.EAGER, cascade = CascadeType.ALL) // Seteo  CascadeType.ALL ya que si borro un genero borro todas las peliculas relacionadas al genero
+    //esto no hace falta
+    @OneToMany (mappedBy = "genero", fetch = FetchType.LAZY, cascade = CascadeType.ALL) // Seteo  CascadeType.ALL ya que si borro un genero borro todas las peliculas relacionadas al genero
     private Set<PeliculaEntity> peliculas;
 
 }
