@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 
+import javax.validation.Valid;
 import java.util.List;
 
 
@@ -21,7 +22,7 @@ public class GeneroController {
     private GeneroService generoService;
 
     @PostMapping
-    public ResponseEntity<GeneroDTO> save(@RequestBody GeneroDTO genero) {
+    public ResponseEntity<GeneroDTO> save(@Valid @RequestBody GeneroDTO genero) {
         GeneroDTO generoGuardado = generoService.save(genero);
         return ResponseEntity.status(HttpStatus.CREATED).body(generoGuardado);
     }

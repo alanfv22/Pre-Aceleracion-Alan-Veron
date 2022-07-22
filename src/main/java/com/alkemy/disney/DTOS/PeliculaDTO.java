@@ -1,11 +1,12 @@
 package com.alkemy.disney.DTOS;
 
-import com.alkemy.disney.entities.PersonajeEntity;
-import com.sun.istack.NotNull;
+
+
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -15,11 +16,19 @@ public class PeliculaDTO {
 
     private Integer peliculaId;
     private String imagen;
+
+    @NotNull(message = "Debe ingresar el titulo")
     private String titulo;
+
     private LocalDate fechaCreacion;
 
+    @Min(1)
+    @Max(10)
     private int calificacion;
+
     private Long generoId;
-    private Set<PersonajeEntity> personajes;
+
+    @NotNull(message = "La pelicula debe contener personajes")
+    private Set<PersonajeDTO> personajes;
 }
 

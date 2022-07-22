@@ -46,7 +46,7 @@ public class PeliculaEntity {
     private GeneroEntity genero; // Para buscar informacion
 
 
-    @Column(name = "genero_id", nullable = false) // Para guardar y actualizar,nullable=false->no permite null
+    @Column(name = "genero_id",nullable=false) // Para guardar y actualizar,nullable=false->no permite null
     private Long generoId;
 
     // métodos de utilidad para el borrado y agregado de personajes
