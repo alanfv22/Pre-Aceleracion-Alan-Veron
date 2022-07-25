@@ -1,4 +1,4 @@
-package com.alkemy.disney.services.implementaciones;
+package com.alkemy.disney.services.Interfaces;
 
 import com.alkemy.disney.DTOS.GeneroDTO;
 

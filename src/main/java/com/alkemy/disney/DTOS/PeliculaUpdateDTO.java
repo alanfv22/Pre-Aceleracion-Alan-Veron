@@ -1,20 +1,19 @@
 package com.alkemy.disney.DTOS;
 
-
-
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.Set;
 
 @Getter
 @Setter
-@ToString
-public class PeliculaDTO {
+public class PeliculaUpdateDTO {
 
+    @NotNull(message = "Debe ingresar el ID de la pelicula a editar")
     private Long peliculaId;
     private String imagen;
 
@@ -27,10 +26,6 @@ public class PeliculaDTO {
     @Max(10)
     private int calificacion;
 
-    @NotNull(message = "Debe asignar un genero")
     private Long generoId;
 
-    @NotNull(message = "La pelicula debe contener personajes")
-    private Set<PersonajeDTO> personajes;
 }
-

@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "peliculas")
-@SQLDelete(sql = "UPDATE pelicula SET  deleted= true WHERE id=?")
+@SQLDelete(sql = "UPDATE peliculas SET  deleted= true WHERE pelicula_id=?")
 @Where(clause = "deleted=false")
 @Getter
 @Setter
@@ -21,7 +21,7 @@ public class PeliculaEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column (name = "pelicula_id")
-    private Integer peliculaId;
+    private Long peliculaId;
 
     private String titulo;
 

@@ -1,19 +1,23 @@
 package com.alkemy.disney.controllers;
 
 
+
 import com.alkemy.disney.DTOS.PersonajeBasicDTO;
 import com.alkemy.disney.DTOS.PersonajeDTO;
-import com.alkemy.disney.services.implementaciones.PersonajeService;
+
+import com.alkemy.disney.DTOS.PersonajeUpdateDTO;
+import com.alkemy.disney.services.Interfaces.PersonajeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Set;
 
 @RestController
-@RequestMapping("personajes")
+@RequestMapping("/characters")
 public class PersonajeController {
 
     @Autowired
@@ -26,11 +30,15 @@ public class PersonajeController {
     }
 
     @GetMapping
-    public ResponseEntity<Set<PersonajeDTO>> getAll(){
-        Set<PersonajeDTO> personajes= personajeService.getAll();
+    public ResponseEntity<List<PersonajeBasicDTO>> getDetailByFilters(
+            @RequestParam(required = false)String nombre,
+            @RequestParam(required = false) Integer edad,
+            @RequestParam(required = false) Set<Long> peliculas
+    ) {
+        List<PersonajeBasicDTO> personajes= personajeService.getByFilters(nombre,edad,peliculas);
         return ResponseEntity.status(HttpStatus.CREATED).body(personajes);
-    }
 
+    }
     @GetMapping("/{id}")
     public ResponseEntity<PersonajeDTO> getCharacterById(@PathVariable Long id){
         PersonajeDTO personaje= personajeService.getById(id);
@@ -44,7 +52,7 @@ public class PersonajeController {
     }
 
     @PutMapping
-    public ResponseEntity<PersonajeDTO> update(@Valid @RequestBody PersonajeBasicDTO personaje) {
+    public ResponseEntity<PersonajeDTO> update(@Valid @RequestBody PersonajeUpdateDTO personaje) {
         PersonajeDTO personajeGuardado =personajeService.update(personaje);
         return ResponseEntity.status(HttpStatus.CREATED).body(personajeGuardado);
     }
