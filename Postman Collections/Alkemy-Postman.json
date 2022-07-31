@@ -625,6 +625,105 @@
 							"cookie": [],
 							"responseTime": null,
 							"body": "[\n    {\n        \"nombre\": \"Thor\",\n        \"imagen\": \"\"\n    },\n    {\n        \"nombre\": \"Hulk\",\n        \"imagen\": \"\"\n    },\n    {\n        \"nombre\": \"Capitan America\",\n        \"imagen\": null\n    }\n]"
+						},
+						{
+							"id": "b3caf747-649c-43a1-9409-6b12aad5bff7",
+							"name": "Personajes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/characters?nombre=Thor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters"
+									],
+									"query": [
+										{
+											"key": "nombre",
+											"value": "Thor",
+											"type": "text"
+										},
+										{
+											"key": "peliculas",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "edad",
+											"value": "40",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "peso",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:59:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"nombre\": \"Thor\",\n        \"imagen\": \"\"\n    }\n]"
 						}
 					]
 				},
