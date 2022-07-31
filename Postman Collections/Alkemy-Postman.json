@@ -442,7 +442,78 @@
 						},
 						"url": "http://localhost:8080/personajes"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "4ac9a4cf-63bb-4c84-86a3-cbec40bdfcb8",
+							"name": "Personajes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"Capitan America\",\r\n    \"edad\": \"40\",\r\n    \"peso\": \"86.0\",\r\n    \"historia\": \"Personaje del universo UMC\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/characters"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:54:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"personajeId\": 3,\n    \"imagen\": null,\n    \"nombre\": \"Capitan America\",\n    \"edad\": 40,\n    \"peso\": 86,\n    \"historia\": \"Personaje del universo UMC\",\n    \"peliculas\": null\n}"
+						}
+					]
 				},
 				{
 					"name": "PersonajesByFilters",
