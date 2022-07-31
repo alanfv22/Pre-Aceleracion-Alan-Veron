@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "f883c39a-88fe-45c2-abdd-ff7967ff33a0",
+		"name": "Alkemy-Disney",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Peliculas",
+			"item": [
+				{
+					"name": "Peliculas",
+					"_postman_id": "879117a0-9508-43cf-94f4-bceaf7094fa3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imagen\":\"\",\r\n    \"titulo\":\"Los vengadores\",\r\n    \"fechaCreacion\":\"2012-04-11\",\r\n    \"calificacion\":9,\r\n    \"generoId\":1,\r\n     \"personajes\":[{\r\n         \"nombre\": \"Thor\",\r\n         \"edad\":12,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"80.0\",\r\n         \"historia\":\"Personaje de la pelicula los vengadores\"\r\n         } ]\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/peliculas"
+					},
+					"response": []
+				},
+				{
+					"name": "PeliculasByFilters",
+					"_postman_id": "62554885-1ad6-4e42-a7c2-c5041f576dd5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/peliculas"
+					},
+					"response": []
+				},
+				{
+					"name": "PeliculaByID",
+					"_postman_id": "829aa463-2ce0-48e4-a25e-c7e0279e8648",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePelicula",
+					"_postman_id": "1624165a-c722-47be-b730-c1cc72f1d39a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"peliculaId\":\"1\",\r\n    \"imagen\":\"\",\r\n    \"titulo\":\"Los vengadores (edit)\",\r\n    \"fechaCreacion\":\"2012-04-11\",\r\n    \"calificacion\":10,\r\n    \"generoId\":1,\r\n    \"personajes\":[{\r\n         \"nombre\": \"Thrrfor\",\r\n         \"edad\":40,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"80.0\",\r\n         \"historia\":\"Personaje de la pelicula los vengadores\"\r\n         },\r\n         {\r\n         \"nombre\": \"Hulk\",\r\n         \"edad\":490,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"100.0\",\r\n         \"historia\":\"Personaje de la pelicula los vengadores\"\r\n         } ]\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/peliculas"
+					},
+					"response": []
+				},
+				{
+					"name": "Peliculas",
+					"_postman_id": "bd1ac5ce-6455-4eb8-af20-28436e5acbdd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/peliculas"
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Personaje",
+					"_postman_id": "c671a0d4-c8c0-4b0c-a3cd-bfe13fe410ab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Personaje",
+					"_postman_id": "c8a2c741-257e-4e80-ae15-5708add7027c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "b7155790-3252-4357-8594-341bfaefc789"
+		},
+		{
+			"name": "Personajes",
+			"item": [
+				{
+					"name": "Personajes",
+					"_postman_id": "529123ce-fd9d-4f5f-8fde-dc2b1b0f96be",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Iron Man\",\r\n    \"edad\": \"45\",\r\n    \"peso\": \"74.0\",\r\n    \"historia\": \"Actor de la pelicula los vengadores\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/personajes"
+					},
+					"response": []
+				},
+				{
+					"name": "PersonajesByFilters",
+					"_postman_id": "bae19ba5-61cd-4c9d-912a-0ec7e412c3e9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "PersonajeByID",
+					"_postman_id": "67f2e2df-79f8-4781-9282-805aa68ad7f7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePersonaje",
+					"_postman_id": "950237b1-23dc-415c-b738-09af75deb7a2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/personajes"
+					},
+					"response": []
+				},
+				{
+					"name": "Personajes",
+					"_postman_id": "501ece99-3266-4d00-9ad0-3e1595b62035",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/personajes/1"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "d33abf9d-c892-4846-bc77-3dd68fe34174"
+		},
+		{
+			"name": "Generos",
+			"item": [
+				{
+					"name": "Generos",
+					"_postman_id": "fd584625-d090-422b-975c-1f8d9b745aea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Ciencia Ficcion\",\r\n    \"imagen\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/generos"
+					},
+					"response": []
+				},
+				{
+					"name": "Generos",
+					"_postman_id": "1e446633-4d56-4a41-bafa-27340302b644",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "a40a8042-5bb1-4d47-9dd0-034e20eb6147"
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "singup",
+					"_postman_id": "6c1cf823-74d0-4e29-b31c-703eafd08821",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/auth/singup"
+					},
+					"response": []
+				},
+				{
+					"name": "singin",
+					"_postman_id": "b188028f-4cdb-4957-8208-488e4998295e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/auth/singin"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "d4a861c5-9d27-4dab-bfba-8471bd0659df"
+		}
+	]
+}
