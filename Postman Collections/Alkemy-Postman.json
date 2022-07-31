@@ -28,7 +28,78 @@
 						},
 						"url": "http://localhost:8080/peliculas"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "0518ca23-4c54-410c-9bc7-a7b48c9866c9",
+							"name": "Peliculas",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"imagen\":\"\",\r\n    \"titulo\":\"Los vengadores\",\r\n    \"fechaCreacion\":\"2014-06-11\",\r\n    \"calificacion\":7,\r\n    \"generoId\":1,\r\n    \"personajes\":[{\r\n         \"nombre\": \"Thor\",\r\n         \"edad\":40,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"80.0\",\r\n         \"historia\":\"Personaje del universo UMC\"\r\n         },\r\n         {\r\n         \"nombre\": \"Hulk\",\r\n         \"edad\":49,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"110.0\",\r\n         \"historia\":\"Personaje del universo UMC\"\r\n         } ]\r\n}\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/movies"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:24:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"peliculaId\": 1,\n    \"imagen\": \"\",\n    \"titulo\": \"Los vengadores\",\n    \"fechaCreacion\": \"2014-06-11\",\n    \"calificacion\": 7,\n    \"generoId\": 1,\n    \"personajes\": [\n        {\n            \"personajeId\": 2,\n            \"imagen\": \"\",\n            \"nombre\": \"Hulk\",\n            \"edad\": 49,\n            \"peso\": 110,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        },\n        {\n            \"personajeId\": 1,\n            \"imagen\": \"\",\n            \"nombre\": \"Thor\",\n            \"edad\": 40,\n            \"peso\": 80,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "PeliculasByFilters",
