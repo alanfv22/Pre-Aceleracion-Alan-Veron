@@ -4,9 +4,7 @@ import com.alkemy.disney.DTOS.PeliculaDTO;
 import com.alkemy.disney.DTOS.PersonajeBasicDTO;
 import com.alkemy.disney.DTOS.PersonajeDTO;
 import com.alkemy.disney.DTOS.PersonajeUpdateDTO;
-import com.alkemy.disney.entities.PeliculaEntity;
 import com.alkemy.disney.entities.PersonajeEntity;
-import com.alkemy.disney.repository.PersonajeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -85,7 +83,7 @@ public class PersonajeMapper {
 
     public List<PersonajeBasicDTO> personajeEntitySet2DTOList(List<PersonajeEntity> entities) {
 
-        List<PersonajeBasicDTO> ret= new ArrayList<>();
+        List<PersonajeBasicDTO> ret = new ArrayList<>();
 
         for (PersonajeEntity entiti : entities)
             ret.add(personajeEntity2BasicDTO(entiti));
@@ -95,7 +93,7 @@ public class PersonajeMapper {
 
     private PersonajeBasicDTO personajeEntity2BasicDTO(PersonajeEntity entiti) {
 
-        PersonajeBasicDTO personajeBasicDTO= new PersonajeBasicDTO();
+        PersonajeBasicDTO personajeBasicDTO = new PersonajeBasicDTO();
 
         personajeBasicDTO.setImagen(entiti.getImagen());
         personajeBasicDTO.setNombre(entiti.getNombre());

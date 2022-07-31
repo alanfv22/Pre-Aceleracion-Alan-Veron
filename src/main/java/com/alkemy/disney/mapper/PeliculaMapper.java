@@ -33,7 +33,7 @@ public class PeliculaMapper {
     }
 
     private void convertBasicValues(PeliculaEntity peliculaEntity, PeliculaDTO dto) {
-        refreshValues(peliculaEntity, dto,true);
+        refreshValues(peliculaEntity, dto, true);
     }
 
     public PeliculaDTO peliculaEntity2DTO(PeliculaEntity entity, Boolean cargarPersonajes) {
@@ -68,7 +68,7 @@ public class PeliculaMapper {
     }
 
 
-    public PeliculaDTO refreshValues(PeliculaEntity peliculaEntity, PeliculaDTO peliculaDTO,Boolean actualizarPersonajes) {
+    public PeliculaDTO refreshValues(PeliculaEntity peliculaEntity, PeliculaDTO peliculaDTO, Boolean actualizarPersonajes) {
 
         peliculaEntity.setCalificacion(peliculaDTO.getCalificacion());
         peliculaEntity.setImagen(peliculaDTO.getImagen());
@@ -76,13 +76,14 @@ public class PeliculaMapper {
         peliculaEntity.setFechaCreacion(peliculaDTO.getFechaCreacion());
         peliculaEntity.setTitulo(peliculaDTO.getTitulo());
 
-        if(actualizarPersonajes)
+        if (actualizarPersonajes)
             peliculaEntity.setPersonajes(personajeMapper.personajeDTO2EntityList(peliculaDTO.getPersonajes()));
 
         return peliculaDTO;
 
     }
-    public PeliculaDTO peliculaUpdateDTO2peliculaFullDTO(PeliculaDTO dto, PeliculaUpdateDTO update){
+
+    public PeliculaDTO peliculaUpdateDTO2peliculaFullDTO(PeliculaDTO dto, PeliculaUpdateDTO update) {
         dto.setCalificacion(update.getCalificacion());
         dto.setTitulo(update.getTitulo());
         dto.setImagen(update.getImagen());
@@ -91,9 +92,10 @@ public class PeliculaMapper {
 
         return dto;
     }
+
     public List<PeliculaBasicDTO> peliculaEntitySet2DTOList(List<PeliculaEntity> entities) {
 
-        List<PeliculaBasicDTO> ret= new ArrayList<>();
+        List<PeliculaBasicDTO> ret = new ArrayList<>();
 
 
         for (PeliculaEntity entiti : entities)

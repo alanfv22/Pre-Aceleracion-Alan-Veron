@@ -3,9 +3,6 @@ package com.alkemy.disney.DTOS;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.util.Set;
-
 @Getter
 @Setter
 public class PeliculaFiltersDTO {
@@ -20,6 +17,11 @@ public class PeliculaFiltersDTO {
         this.order = order;
     }
 
-    public boolean isASC() { return this.order.compareToIgnoreCase("ASC")==0;}
-    public boolean isDESC() { return this.order.compareToIgnoreCase("DESC")==0;}
+    public boolean isASC() {
+        return this.order.compareToIgnoreCase("ASC") == 0;
+    }
+
+    public boolean isDESC() {
+        return this.order.compareToIgnoreCase("DESC") == 0;
+    }
 }

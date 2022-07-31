@@ -21,12 +21,19 @@ import java.util.Set;
 @Service
 public class PersonajeServiceImpl implements PersonajeService {
 
+    private PersonajeMapper personajeMapper;
+
+    private PersonajeRepository personajeRepository;
+
+    private PersonajeSpecifications personajeSpecifications;
+
     @Autowired
-    PersonajeMapper personajeMapper;
-    @Autowired
-    PersonajeRepository personajeRepository;
-    @Autowired
-    PersonajeSpecifications personajeSpecifications;
+    public PersonajeServiceImpl(PersonajeMapper personajeMapper, PersonajeRepository personajeRepository, PersonajeSpecifications personajeSpecifications) {
+        this.personajeMapper = personajeMapper;
+        this.personajeRepository = personajeRepository;
+        this.personajeSpecifications = personajeSpecifications;
+    }
+
 
     @Override
     public PersonajeDTO save(PersonajeDTO dto) {
@@ -35,8 +42,7 @@ public class PersonajeServiceImpl implements PersonajeService {
 
         if (personaje.isPresent()) {
             throw new ParamNotFound("El personaje ya existe");
-        }
-        else {
+        } else {
             PersonajeEntity entity = personajeMapper.personajeDTO2Entity(dto);
             PersonajeEntity personajeSave = personajeRepository.save(entity);
             PersonajeDTO res = personajeMapper.personajeEntity2DTO(personajeSave, false);
@@ -62,8 +68,8 @@ public class PersonajeServiceImpl implements PersonajeService {
     }
 
     @Override
-    public List<PersonajeBasicDTO> getByFilters(String nombre, Integer edad, Set<Long> peliculas) {
-        PersonajeFiltersDTO personajeFiltersDTO = new PersonajeFiltersDTO(nombre, edad, peliculas);
+    public List<PersonajeBasicDTO> getByFilters(String nombre, int edad, Set<Long> peliculas, float peso) {
+        PersonajeFiltersDTO personajeFiltersDTO = new PersonajeFiltersDTO(nombre, edad, peliculas, peso);
         List<PersonajeEntity> entities = personajeRepository.findAll(this.personajeSpecifications.getByFilters(personajeFiltersDTO));
         List<PersonajeBasicDTO> dto = personajeMapper.personajeEntitySet2DTOList(entities);
 

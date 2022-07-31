@@ -15,6 +15,7 @@ import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
+
 @Component
 public class PersonajeSpecifications {
 
@@ -33,25 +34,23 @@ public class PersonajeSpecifications {
             }
 
 
-            if (StringUtils.hasLength(String.valueOf(filtersDTO.getEdad()))) {
-                predicateList.add(
-                        criteriaBuilder.like(
-                                criteriaBuilder.lower(root.get("edad")),
-                                "%" + filtersDTO.getEdad() + "%"
-                        )
-                );
+            if (filtersDTO.getEdad() != 0) {
+                predicateList.add(criteriaBuilder.equal(root.get("edad"), filtersDTO.getEdad()));
             }
 
+            if (filtersDTO.getPeso() != 0) {
+                predicateList.add(criteriaBuilder.equal(root.get("peso"), filtersDTO.getPeso()));
+            }
             if (!CollectionUtils.isEmpty(filtersDTO.getPeliculas())) {
                 Join<PeliculaEntity, PersonajeEntity> join = root.join("peliculas", JoinType.INNER);
-                Expression<String> peliculasId = join.get("id");
+                Expression<String> peliculasId = join.get("peliculaId");
                 predicateList.add(peliculasId.in(filtersDTO.getPeliculas()));
             }
 
             // remover duplicados
             query.distinct(true);
 
-            return  criteriaBuilder.and(predicateList.toArray(predicateList.toArray(new Predicate[0])));
+            return criteriaBuilder.and(predicateList.toArray(predicateList.toArray(new Predicate[0])));
         };
     }
 }

@@ -35,6 +35,7 @@ public class PeliculaServiceImpl implements PeliculaService {
     @Autowired
     PersonajeRepository personajeRepository;
 
+
     @Override
     public PeliculaDTO getById(Long id) {
         PeliculaEntity entiti = peliculaRepository.getById(id);
@@ -45,10 +46,12 @@ public class PeliculaServiceImpl implements PeliculaService {
     @Override
     public PeliculaDTO save(PeliculaDTO DTO) {
         // No se puede crear una pelicula con el mismo nombre
-        Optional<PersonajeEntity> pelicula = peliculaRepository.findByTitulo(DTO.getTitulo());
+        Optional<PeliculaEntity> pelicula = peliculaRepository.findByTitulo(DTO.getTitulo());
+
 
         if (pelicula.isPresent())
             throw new ParamNotFound("La pelicula ya existe");
+
 
         else {
             PeliculaEntity entiti = peliculaMapper.peliculaDTO2Entity(DTO);
@@ -112,7 +115,7 @@ public class PeliculaServiceImpl implements PeliculaService {
         if (!peliculaRepository.existsById(idMovie))
             throw new ParamNotFound("La pelicula no existe");
 
-        Set<PersonajeEntity> personajes= peliculaRepository.getReferenceById(idMovie).getPersonajes();
+        Set<PersonajeEntity> personajes = peliculaRepository.getReferenceById(idMovie).getPersonajes();
 
         if (!personajes.contains(personajeRepository.getReferenceById(idCharacter)))
             throw new ParamNotFound("El personaje no existe");

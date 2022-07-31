@@ -12,6 +12,5 @@ import java.util.Optional;
 @Repository
 public interface PersonajeRepository extends JpaRepository<PersonajeEntity, Long>, JpaSpecificationExecutor<PersonajeEntity> {
 
-
     Optional<PersonajeEntity> findByNombre(String nombre);
 }

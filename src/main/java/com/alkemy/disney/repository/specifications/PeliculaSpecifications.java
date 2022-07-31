@@ -18,16 +18,16 @@ import java.util.List;
 @Component
 public class PeliculaSpecifications {
 
-    public Specification<PeliculaEntity> getByFilters(PeliculaFiltersDTO filtersDTO){
+    public Specification<PeliculaEntity> getByFilters(PeliculaFiltersDTO filtersDTO) {
         return (root, query, criteriaBuilder) -> {
 
-            List<Predicate> predicateList= new ArrayList<>();
+            List<Predicate> predicateList = new ArrayList<>();
 
-            if(StringUtils.hasLength(filtersDTO.getTitulo())) {
+            if (StringUtils.hasLength(filtersDTO.getTitulo())) {
                 predicateList.add(
                         criteriaBuilder.like(
                                 criteriaBuilder.lower(root.get("titulo")),
-                                "%" + filtersDTO.getTitulo().toLowerCase()+ "%"
+                                "%" + filtersDTO.getTitulo().toLowerCase() + "%"
                         )
                 );
             }
@@ -49,7 +49,7 @@ public class PeliculaSpecifications {
                             criteriaBuilder.desc(root.get(orderByField))
             );
 
-            return  criteriaBuilder.and(predicateList.toArray(predicateList.toArray(new Predicate[0])));
+            return criteriaBuilder.and(predicateList.toArray(predicateList.toArray(new Predicate[0])));
         };
     }
 }
