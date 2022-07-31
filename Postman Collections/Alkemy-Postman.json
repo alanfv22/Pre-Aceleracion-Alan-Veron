@@ -10,7 +10,7 @@
 			"item": [
 				{
 					"name": "Peliculas",
-					"_postman_id": "879117a0-9508-43cf-94f4-bceaf7094fa3",
+					"id": "879117a0-9508-43cf-94f4-bceaf7094fa3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -32,7 +32,7 @@
 				},
 				{
 					"name": "PeliculasByFilters",
-					"_postman_id": "62554885-1ad6-4e42-a7c2-c5041f576dd5",
+					"id": "62554885-1ad6-4e42-a7c2-c5041f576dd5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -45,20 +45,88 @@
 				},
 				{
 					"name": "PeliculaByID",
-					"_postman_id": "829aa463-2ce0-48e4-a25e-c7e0279e8648",
+					"id": "829aa463-2ce0-48e4-a25e-c7e0279e8648",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": []
 					},
-					"response": []
+					"response": [
+						{
+							"id": "dda80ace-c2fa-4556-ad06-eed980b58ea6",
+							"name": "Pelicula",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyQGdtYWlsLmNvbSIsImlhdCI6MTY1OTEzODA4MiwiZXhwIjoxNjU5MTc0MDgyfQ.-_EAhxe3tmBqLcQnoTf9976_ZN5QPvb6nWfFp7TRdBw",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": "http://localhost:8080/movies/1"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:41:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"peliculaId\": 1,\n    \"imagen\": \"\",\n    \"titulo\": \"Los vengadores(edit)\",\n    \"fechaCreacion\": \"2011-04-11\",\n    \"calificacion\": 10,\n    \"generoId\": 1,\n    \"personajes\": [\n        {\n            \"personajeId\": 3,\n            \"imagen\": null,\n            \"nombre\": \"Capitan America\",\n            \"edad\": 40,\n            \"peso\": 86,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        },\n        {\n            \"personajeId\": 2,\n            \"imagen\": \"\",\n            \"nombre\": \"Hulk\",\n            \"edad\": 49,\n            \"peso\": 110,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        },\n        {\n            \"personajeId\": 1,\n            \"imagen\": \"\",\n            \"nombre\": \"Thor\",\n            \"edad\": 40,\n            \"peso\": 80,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "UpdatePelicula",
-					"_postman_id": "1624165a-c722-47be-b730-c1cc72f1d39a",
+					"id": "1624165a-c722-47be-b730-c1cc72f1d39a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -80,7 +148,7 @@
 				},
 				{
 					"name": "Peliculas",
-					"_postman_id": "bd1ac5ce-6455-4eb8-af20-28436e5acbdd",
+					"id": "bd1ac5ce-6455-4eb8-af20-28436e5acbdd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -93,39 +161,37 @@
 				},
 				{
 					"name": "Agregar Personaje",
-					"_postman_id": "c671a0d4-c8c0-4b0c-a3cd-bfe13fe410ab",
+					"id": "c671a0d4-c8c0-4b0c-a3cd-bfe13fe410ab",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": []
 					},
 					"response": []
 				},
 				{
 					"name": "Eliminar Personaje",
-					"_postman_id": "c8a2c741-257e-4e80-ae15-5708add7027c",
+					"id": "c8a2c741-257e-4e80-ae15-5708add7027c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": []
 					},
 					"response": []
 				}
 			],
-			"_postman_id": "b7155790-3252-4357-8594-341bfaefc789"
+			"id": "b7155790-3252-4357-8594-341bfaefc789"
 		},
 		{
 			"name": "Personajes",
 			"item": [
 				{
 					"name": "Personajes",
-					"_postman_id": "529123ce-fd9d-4f5f-8fde-dc2b1b0f96be",
+					"id": "529123ce-fd9d-4f5f-8fde-dc2b1b0f96be",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -147,33 +213,31 @@
 				},
 				{
 					"name": "PersonajesByFilters",
-					"_postman_id": "bae19ba5-61cd-4c9d-912a-0ec7e412c3e9",
+					"id": "bae19ba5-61cd-4c9d-912a-0ec7e412c3e9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": []
 					},
 					"response": []
 				},
 				{
 					"name": "PersonajeByID",
-					"_postman_id": "67f2e2df-79f8-4781-9282-805aa68ad7f7",
+					"id": "67f2e2df-79f8-4781-9282-805aa68ad7f7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": []
 					},
 					"response": []
 				},
 				{
 					"name": "UpdatePersonaje",
-					"_postman_id": "950237b1-23dc-415c-b738-09af75deb7a2",
+					"id": "950237b1-23dc-415c-b738-09af75deb7a2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -186,7 +250,7 @@
 				},
 				{
 					"name": "Personajes",
-					"_postman_id": "501ece99-3266-4d00-9ad0-3e1595b62035",
+					"id": "501ece99-3266-4d00-9ad0-3e1595b62035",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -207,14 +271,14 @@
 					"response": []
 				}
 			],
-			"_postman_id": "d33abf9d-c892-4846-bc77-3dd68fe34174"
+			"id": "d33abf9d-c892-4846-bc77-3dd68fe34174"
 		},
 		{
 			"name": "Generos",
 			"item": [
 				{
 					"name": "Generos",
-					"_postman_id": "fd584625-d090-422b-975c-1f8d9b745aea",
+					"id": "fd584625-d090-422b-975c-1f8d9b745aea",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -236,26 +300,25 @@
 				},
 				{
 					"name": "Generos",
-					"_postman_id": "1e446633-4d56-4a41-bafa-27340302b644",
+					"id": "1e446633-4d56-4a41-bafa-27340302b644",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": null
+						"header": []
 					},
 					"response": []
 				}
 			],
-			"_postman_id": "a40a8042-5bb1-4d47-9dd0-034e20eb6147"
+			"id": "a40a8042-5bb1-4d47-9dd0-034e20eb6147"
 		},
 		{
 			"name": "auth",
 			"item": [
 				{
 					"name": "singup",
-					"_postman_id": "6c1cf823-74d0-4e29-b31c-703eafd08821",
+					"id": "6c1cf823-74d0-4e29-b31c-703eafd08821",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -268,7 +331,7 @@
 				},
 				{
 					"name": "singin",
-					"_postman_id": "b188028f-4cdb-4957-8208-488e4998295e",
+					"id": "b188028f-4cdb-4957-8208-488e4998295e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -280,7 +343,7 @@
 					"response": []
 				}
 			],
-			"_postman_id": "d4a861c5-9d27-4dab-bfba-8471bd0659df"
+			"id": "d4a861c5-9d27-4dab-bfba-8471bd0659df"
 		}
 	]
 }
