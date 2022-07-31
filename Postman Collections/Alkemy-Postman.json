@@ -727,7 +727,7 @@
 						},
 						{
 							"id": "20c2a107-113c-425a-9598-8e20e9fadd86",
-							"name": "Personajes",
+							"name": "PersonajesByEdad",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
