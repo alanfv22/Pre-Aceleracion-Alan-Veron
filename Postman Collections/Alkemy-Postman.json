@@ -1,0 +1,1207 @@
+{
+	"info": {
+		"_postman_id": "f883c39a-88fe-45c2-abdd-ff7967ff33a0",
+		"name": "Alkemy-Disney",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Peliculas",
+			"item": [
+				{
+					"name": "Peliculas",
+					"id": "879117a0-9508-43cf-94f4-bceaf7094fa3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imagen\":\"\",\r\n    \"titulo\":\"Los vengadores\",\r\n    \"fechaCreacion\":\"2012-04-11\",\r\n    \"calificacion\":9,\r\n    \"generoId\":1,\r\n     \"personajes\":[{\r\n         \"nombre\": \"Thor\",\r\n         \"edad\":12,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"80.0\",\r\n         \"historia\":\"Personaje de la pelicula los vengadores\"\r\n         } ]\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/peliculas"
+					},
+					"response": [
+						{
+							"id": "ce85aa5f-4c9e-4390-9d12-289e1b0519b7",
+							"name": "Los vengadores",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"imagen\":\"\",\r\n    \"titulo\":\"Los vengadores\",\r\n    \"fechaCreacion\":\"2014-06-11\",\r\n    \"calificacion\":7,\r\n    \"generoId\":1,\r\n    \"personajes\":[{\r\n         \"nombre\": \"Thor\",\r\n         \"edad\":40,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"80.0\",\r\n         \"historia\":\"Personaje del universo UMC\"\r\n         },\r\n         {\r\n         \"nombre\": \"Hulk\",\r\n         \"edad\":49,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"110.0\",\r\n         \"historia\":\"Personaje del universo UMC\"\r\n         } ]\r\n}\r\n\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/movies"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:47:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"peliculaId\": 1,\n    \"imagen\": \"\",\n    \"titulo\": \"Los vengadores\",\n    \"fechaCreacion\": \"2014-06-11\",\n    \"calificacion\": 7,\n    \"generoId\": 1,\n    \"personajes\": [\n        {\n            \"personajeId\": 2,\n            \"imagen\": \"\",\n            \"nombre\": \"Hulk\",\n            \"edad\": 49,\n            \"peso\": 110,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        },\n        {\n            \"personajeId\": 1,\n            \"imagen\": \"\",\n            \"nombre\": \"Thor\",\n            \"edad\": 40,\n            \"peso\": 80,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "PeliculasByFilters",
+					"id": "62554885-1ad6-4e42-a7c2-c5041f576dd5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/peliculas"
+					},
+					"response": [
+						{
+							"id": "a32fa0a0-3b77-495a-a967-96dbf0975a3d",
+							"name": "Peliculas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"movies"
+									],
+									"query": [
+										{
+											"key": "generoId",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "titulo",
+											"value": "Los vengadores",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:50:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"imagen\": \"\",\n        \"titulo\": \"Los vengadores\",\n        \"fechaCreación\": \"2014-06-11\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "PeliculaByID",
+					"id": "829aa463-2ce0-48e4-a25e-c7e0279e8648",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"id": "6435cdff-c27d-443f-ac8b-058e7887c623",
+							"name": "PeliculaID1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyQGdtYWlsLmNvbSIsImlhdCI6MTY1OTEzODA4MiwiZXhwIjoxNjU5MTc0MDgyfQ.-_EAhxe3tmBqLcQnoTf9976_ZN5QPvb6nWfFp7TRdBw",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": "http://localhost:8080/movies/1"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:53:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"peliculaId\": 1,\n    \"imagen\": \"\",\n    \"titulo\": \"Los vengadores\",\n    \"fechaCreacion\": \"2014-06-11\",\n    \"calificacion\": 7,\n    \"generoId\": 1,\n    \"personajes\": [\n        {\n            \"personajeId\": 2,\n            \"imagen\": \"\",\n            \"nombre\": \"Hulk\",\n            \"edad\": 49,\n            \"peso\": 110,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        },\n        {\n            \"personajeId\": 1,\n            \"imagen\": \"\",\n            \"nombre\": \"Thor\",\n            \"edad\": 40,\n            \"peso\": 80,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdatePelicula",
+					"id": "1624165a-c722-47be-b730-c1cc72f1d39a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"peliculaId\":\"1\",\r\n    \"imagen\":\"\",\r\n    \"titulo\":\"Los vengadores (edit)\",\r\n    \"fechaCreacion\":\"2012-04-11\",\r\n    \"calificacion\":10,\r\n    \"generoId\":1,\r\n    \"personajes\":[{\r\n         \"nombre\": \"Thrrfor\",\r\n         \"edad\":40,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"80.0\",\r\n         \"historia\":\"Personaje de la pelicula los vengadores\"\r\n         },\r\n         {\r\n         \"nombre\": \"Hulk\",\r\n         \"edad\":490,\r\n         \"imagen\":\"\",\r\n         \"peso\":\"100.0\",\r\n         \"historia\":\"Personaje de la pelicula los vengadores\"\r\n         } ]\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/peliculas"
+					},
+					"response": [
+						{
+							"id": "7f947100-d415-4aeb-9997-d08757de0773",
+							"name": "Los vengadores (edit)",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \"peliculaId\":\"1\",\r\n    \"imagen\":\"\",\r\n    \"titulo\":\"Los vengadores(edit)\",\r\n    \"fechaCreacion\":\"2011-04-11\",\r\n    \"calificacion\":10,\r\n    \"generoId\":1\r\n   \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/movies"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:53:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"peliculaId\": 1,\n    \"imagen\": \"\",\n    \"titulo\": \"Los vengadores(edit)\",\n    \"fechaCreacion\": \"2011-04-11\",\n    \"calificacion\": 10,\n    \"generoId\": 1,\n    \"personajes\": [\n        {\n            \"personajeId\": 1,\n            \"imagen\": \"\",\n            \"nombre\": \"Thor\",\n            \"edad\": 40,\n            \"peso\": 80,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        },\n        {\n            \"personajeId\": 2,\n            \"imagen\": \"\",\n            \"nombre\": \"Hulk\",\n            \"edad\": 49,\n            \"peso\": 110,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Peliculas",
+					"id": "bd1ac5ce-6455-4eb8-af20-28436e5acbdd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/peliculas"
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Personaje",
+					"id": "c671a0d4-c8c0-4b0c-a3cd-bfe13fe410ab",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Personaje",
+					"id": "c8a2c741-257e-4e80-ae15-5708add7027c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "b7155790-3252-4357-8594-341bfaefc789"
+		},
+		{
+			"name": "Personajes",
+			"item": [
+				{
+					"name": "Personajes",
+					"id": "529123ce-fd9d-4f5f-8fde-dc2b1b0f96be",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY1OTI0ODY1NCwiZXhwIjoxNjU5Mjg0NjU0fQ.s_xB5jw0JXfA17tAZUhVO7NnSuKgHuLjQ8hkBg3H5d8"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Capitan America\",\r\n    \"edad\": \"40\",\r\n    \"peso\": \"86.0\",\r\n    \"historia\": \"Personaje del universo UMC\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/characters"
+					},
+					"response": [
+						{
+							"id": "4ac9a4cf-63bb-4c84-86a3-cbec40bdfcb8",
+							"name": "Capitan America",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\":\"Capitan America\",\r\n    \"edad\": \"40\",\r\n    \"peso\": \"86.0\",\r\n    \"historia\": \"Personaje del universo UMC\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/characters"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:54:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"personajeId\": 3,\n    \"imagen\": null,\n    \"nombre\": \"Capitan America\",\n    \"edad\": 40,\n    \"peso\": 86,\n    \"historia\": \"Personaje del universo UMC\",\n    \"peliculas\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "PersonajesByFilters",
+					"id": "bae19ba5-61cd-4c9d-912a-0ec7e412c3e9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY1OTI0ODY1NCwiZXhwIjoxNjU5Mjg0NjU0fQ.s_xB5jw0JXfA17tAZUhVO7NnSuKgHuLjQ8hkBg3H5d8"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/characters?edad=40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Thor",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "peliculas",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "edad",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "peso",
+									"value": "100",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "69d2464e-ebfe-4dd8-9219-328aadec92d1",
+							"name": "Personajes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/characters",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters"
+									],
+									"query": [
+										{
+											"key": "nombre",
+											"value": "Thor",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "peliculas",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "edad",
+											"value": "40",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "peso",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:58:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"nombre\": \"Thor\",\n        \"imagen\": \"\"\n    },\n    {\n        \"nombre\": \"Hulk\",\n        \"imagen\": \"\"\n    },\n    {\n        \"nombre\": \"Capitan America\",\n        \"imagen\": null\n    }\n]"
+						},
+						{
+							"id": "b3caf747-649c-43a1-9409-6b12aad5bff7",
+							"name": "PersonajesByNombre",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/characters?nombre=Thor",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters"
+									],
+									"query": [
+										{
+											"key": "nombre",
+											"value": "Thor",
+											"type": "text"
+										},
+										{
+											"key": "peliculas",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "edad",
+											"value": "40",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "peso",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:59:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"nombre\": \"Thor\",\n        \"imagen\": \"\"\n    }\n]"
+						},
+						{
+							"id": "20c2a107-113c-425a-9598-8e20e9fadd86",
+							"name": "PersonajesByEdad",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/characters?edad=40",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"characters"
+									],
+									"query": [
+										{
+											"key": "nombre",
+											"value": "Thor",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "peliculas",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "edad",
+											"value": "40",
+											"type": "text"
+										},
+										{
+											"key": "peso",
+											"value": "100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:59:34 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "[\n    {\n        \"nombre\": \"Thor\",\n        \"imagen\": \"\"\n    },\n    {\n        \"nombre\": \"Capitan America\",\n        \"imagen\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "PersonajeByID",
+					"id": "67f2e2df-79f8-4781-9282-805aa68ad7f7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"id": "e55eb49d-d60a-4a8e-b9d5-1327796fa7a8",
+							"name": "PersonajeID2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:8080/characters/2"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:59:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"personajeId\": 2,\n    \"imagen\": \"\",\n    \"nombre\": \"Hulk\",\n    \"edad\": 49,\n    \"peso\": 110,\n    \"historia\": \"Personaje del universo UMC\",\n    \"peliculas\": [\n        {\n            \"peliculaId\": 1,\n            \"imagen\": \"\",\n            \"titulo\": \"Los vengadores(edit)\",\n            \"fechaCreacion\": \"2011-04-11\",\n            \"calificacion\": 10,\n            \"generoId\": 1,\n            \"personajes\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdatePersonaje",
+					"id": "950237b1-23dc-415c-b738-09af75deb7a2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "http://localhost:8080/personajes"
+					},
+					"response": [
+						{
+							"id": "f2fc14f6-ca7a-411f-a9c6-9fb18c646e44",
+							"name": "ThorEdit",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \"personajeId\":\"2\",\r\n    \"nombre\":\"Thor (edit)\",\r\n    \"edad\": \"40\",\r\n    \"peso\": \"85.0\",\r\n    \"historia\": \"Actor de la pelicula los vengadores\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/characters"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 07:00:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"personajeId\": 2,\n    \"imagen\": null,\n    \"nombre\": \"Thor (edit)\",\n    \"edad\": 40,\n    \"peso\": 85,\n    \"historia\": \"Actor de la pelicula los vengadores\",\n    \"peliculas\": [\n        {\n            \"peliculaId\": 1,\n            \"imagen\": \"\",\n            \"titulo\": \"Los vengadores(edit)\",\n            \"fechaCreacion\": \"2011-04-11\",\n            \"calificacion\": 10,\n            \"generoId\": 1,\n            \"personajes\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Personajes",
+					"id": "501ece99-3266-4d00-9ad0-3e1595b62035",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/personajes/1"
+					},
+					"response": []
+				}
+			],
+			"id": "d33abf9d-c892-4846-bc77-3dd68fe34174"
+		},
+		{
+			"name": "Generos",
+			"item": [
+				{
+					"name": "Generos",
+					"id": "fd584625-d090-422b-975c-1f8d9b745aea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Ciencia Ficcion\",\r\n    \"imagen\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/generos"
+					},
+					"response": [
+						{
+							"id": "258233ab-2932-4dc1-8b13-db85d58dfa13",
+							"name": "Ciencia Ficcion",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"nombre\":\"Ciencia Ficcion\",\r\n    \"imagen\": null\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/generos"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:49:28 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"generoId\": 1,\n    \"nombre\": \"Ciencia Ficcion\",\n    \"imagen\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Generos",
+					"id": "1e446633-4d56-4a41-bafa-27340302b644",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "a40a8042-5bb1-4d47-9dd0-034e20eb6147"
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "singup",
+					"id": "6c1cf823-74d0-4e29-b31c-703eafd08821",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/auth/singup"
+					},
+					"response": []
+				},
+				{
+					"name": "singin",
+					"id": "b188028f-4cdb-4957-8208-488e4998295e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "http://localhost:8080/auth/singin"
+					},
+					"response": []
+				}
+			],
+			"id": "d4a861c5-9d27-4dab-bfba-8471bd0659df"
+		}
+	]
+}
