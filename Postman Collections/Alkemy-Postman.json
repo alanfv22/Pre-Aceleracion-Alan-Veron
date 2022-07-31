@@ -528,8 +528,53 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY1OTI0ODY1NCwiZXhwIjoxNjU5Mjg0NjU0fQ.s_xB5jw0JXfA17tAZUhVO7NnSuKgHuLjQ8hkBg3H5d8"
+							}
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/characters?edad=40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"characters"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Thor",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "peliculas",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "edad",
+									"value": "40",
+									"type": "text"
+								},
+								{
+									"key": "peso",
+									"value": "100",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						}
 					},
 					"response": [
 						{
