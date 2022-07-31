@@ -429,18 +429,24 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyQGdtYWlsLmNvbSIsImlhdCI6MTY1OTI0ODY1NCwiZXhwIjoxNjU5Mjg0NjU0fQ.s_xB5jw0JXfA17tAZUhVO7NnSuKgHuLjQ8hkBg3H5d8"
+							}
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nombre\":\"Iron Man\",\r\n    \"edad\": \"45\",\r\n    \"peso\": \"74.0\",\r\n    \"historia\": \"Actor de la pelicula los vengadores\"\r\n}",
+							"raw": "{\r\n    \"nombre\":\"Capitan America\",\r\n    \"edad\": \"40\",\r\n    \"peso\": \"86.0\",\r\n    \"historia\": \"Personaje del universo UMC\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "http://localhost:8080/personajes"
+						"url": "http://localhost:8080/characters"
 					},
 					"response": [
 						{
