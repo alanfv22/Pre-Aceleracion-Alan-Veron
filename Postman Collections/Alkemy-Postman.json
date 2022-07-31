@@ -215,7 +215,76 @@
 						"method": "GET",
 						"header": []
 					},
-					"response": []
+					"response": [
+						{
+							"id": "6435cdff-c27d-443f-ac8b-058e7887c623",
+							"name": "Pelicula",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyQGdtYWlsLmNvbSIsImlhdCI6MTY1OTEzODA4MiwiZXhwIjoxNjU5MTc0MDgyfQ.-_EAhxe3tmBqLcQnoTf9976_ZN5QPvb6nWfFp7TRdBw",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": "http://localhost:8080/movies/1"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 06:53:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"peliculaId\": 1,\n    \"imagen\": \"\",\n    \"titulo\": \"Los vengadores\",\n    \"fechaCreacion\": \"2014-06-11\",\n    \"calificacion\": 7,\n    \"generoId\": 1,\n    \"personajes\": [\n        {\n            \"personajeId\": 2,\n            \"imagen\": \"\",\n            \"nombre\": \"Hulk\",\n            \"edad\": 49,\n            \"peso\": 110,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        },\n        {\n            \"personajeId\": 1,\n            \"imagen\": \"\",\n            \"nombre\": \"Thor\",\n            \"edad\": 40,\n            \"peso\": 80,\n            \"historia\": \"Personaje del universo UMC\",\n            \"peliculas\": null\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "UpdatePelicula",
