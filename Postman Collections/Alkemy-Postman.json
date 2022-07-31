@@ -218,7 +218,7 @@
 					"response": [
 						{
 							"id": "6435cdff-c27d-443f-ac8b-058e7887c623",
-							"name": "Pelicula",
+							"name": "PeliculaID1",
 							"originalRequest": {
 								"method": "GET",
 								"header": [
