@@ -309,7 +309,7 @@
 					"response": [
 						{
 							"id": "7f947100-d415-4aeb-9997-d08757de0773",
-							"name": "UpdatePelicula",
+							"name": "Los vengadores (edit)",
 							"originalRequest": {
 								"method": "PUT",
 								"header": [],
