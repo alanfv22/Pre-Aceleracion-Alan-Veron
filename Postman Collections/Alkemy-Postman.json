@@ -911,7 +911,78 @@
 						"header": [],
 						"url": "http://localhost:8080/personajes"
 					},
-					"response": []
+					"response": [
+						{
+							"id": "f2fc14f6-ca7a-411f-a9c6-9fb18c646e44",
+							"name": "Personaje",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \"personajeId\":\"2\",\r\n    \"nombre\":\"Thor (edit)\",\r\n    \"edad\": \"40\",\r\n    \"peso\": \"85.0\",\r\n    \"historia\": \"Actor de la pelicula los vengadores\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/characters"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Jul 2022 07:00:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"personajeId\": 2,\n    \"imagen\": null,\n    \"nombre\": \"Thor (edit)\",\n    \"edad\": 40,\n    \"peso\": 85,\n    \"historia\": \"Actor de la pelicula los vengadores\",\n    \"peliculas\": [\n        {\n            \"peliculaId\": 1,\n            \"imagen\": \"\",\n            \"titulo\": \"Los vengadores(edit)\",\n            \"fechaCreacion\": \"2011-04-11\",\n            \"calificacion\": 10,\n            \"generoId\": 1,\n            \"personajes\": null\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "Personajes",
